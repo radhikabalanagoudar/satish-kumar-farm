@@ -45,8 +45,8 @@ export default function SupplyChain() {
           </p>
         </div>
 
-        {/* 8-Stage Progress Navigation (Responsive Horizontal / Stepper) */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5 mb-10">
+        {/* 7-Stage Progress Navigation (Responsive Horizontal / Stepper) */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5 mb-10">
           {SUPPLY_CHAIN_STAGES.map((stage, idx) => {
             const Icon = ICONS_MAP[stage.icon] || Sprout;
             const isCurrent = activeStageIndex === idx;
@@ -94,7 +94,7 @@ export default function SupplyChain() {
               </div>
               <div>
                 <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#7C9A78]">
-                  Stage {activeStage.number} of 08
+                  Stage {activeStage.number} of {String(SUPPLY_CHAIN_STAGES.length).padStart(2, '0')}
                 </span>
                 <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#173F35]">
                   {activeStage.name}

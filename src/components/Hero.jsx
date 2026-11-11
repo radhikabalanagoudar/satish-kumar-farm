@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sprout } from 'lucide-react';
+import { Sprout, Tag, Navigation, Phone } from 'lucide-react';
 import { FARM_META } from '../data/farmData';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-[#173F35]">
+    <section className="relative min-h-[92vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-[#173F35]">
       {/* Background Image with Dark Vignette Overlay for Readability */}
       <div className="absolute inset-0 z-0">
         <img
@@ -15,12 +15,12 @@ export default function Hero() {
           fetchPriority="high"
         />
         {/* Gradients and tint overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#173F35]/95 via-[#173F35]/65 to-black/40" />
-        <div className="absolute inset-0 bg-[#173F35]/30 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#173F35]/95 via-[#173F35]/70 to-black/45" />
+        <div className="absolute inset-0 bg-[#173F35]/25 mix-blend-multiply" />
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 text-center text-white flex flex-col items-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 text-center text-white flex flex-col items-center">
         {/* Subtle pill badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-xs border border-white/20 text-[#E7A93B] text-xs uppercase tracking-widest font-semibold mb-6 shadow-sm">
           <Sprout className="w-3.5 h-3.5 text-[#E7A93B]" />
@@ -33,27 +33,50 @@ export default function Hero() {
           <span className="italic font-normal text-[#E7A93B]">Growing for Tomorrow.</span>
         </h1>
 
-        {/* Subheading */}
-        <p className="text-base sm:text-lg md:text-xl text-[#F6F1E7]/90 max-w-2xl mx-auto font-light leading-relaxed mb-10">
-          A family-owned farm cultivating fruits, vegetables and long-term agricultural investments with care, patience and purpose.
+        {/* Supporting text */}
+        <p className="text-base sm:text-lg md:text-xl text-[#F6F1E7]/90 max-w-3xl mx-auto font-light leading-relaxed mb-10">
+          A family-owned farm growing a variety of fruits, vegetables and timber trees, with a focus on cultivation, quality and direct farm sales.
         </p>
 
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-12">
-          <Link
-            to="/story"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#E7A93B] hover:bg-[#F4BD56] text-[#173F35] font-semibold text-sm tracking-wider uppercase transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
-          >
-            <span>Explore Our Farm</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-
+        {/* 4 Clear Calls to Action */}
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full max-w-2xl mb-12">
+          {/* 1. Explore Our Crops */}
           <Link
             to="/crops"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-xs font-semibold text-sm tracking-wider uppercase transition-all duration-200 hover:-translate-y-0.5 cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-xs font-semibold text-xs uppercase tracking-wider transition-all duration-200 hover:-translate-y-0.5 cursor-pointer shadow-sm"
           >
+            <Sprout className="w-4 h-4 text-[#E7A93B]" />
             <span>Explore Our Crops</span>
           </Link>
+
+          {/* 2. View Farm Prices */}
+          <Link
+            to="/prices"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#8F2D3B] hover:bg-[#AA394A] text-white font-semibold text-xs uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
+          >
+            <Tag className="w-4 h-4" />
+            <span>View Farm Prices</span>
+          </Link>
+
+          {/* 3. Contact the Farm */}
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#E7A93B] hover:bg-[#F4BD56] text-[#173F35] font-semibold text-xs uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
+          >
+            <Phone className="w-4 h-4" />
+            <span>Contact the Farm</span>
+          </Link>
+
+          {/* 4. Get Directions */}
+          <a
+            href={FARM_META.contact.location.directionsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#173F35] hover:bg-[#23584B] text-white border border-[#7C9A78]/50 font-semibold text-xs uppercase tracking-wider transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
+          >
+            <Navigation className="w-4 h-4 text-[#E7A93B]" />
+            <span>Get Directions</span>
+          </a>
         </div>
 
         {/* Agricultural Journey Pathway Ribbon */}

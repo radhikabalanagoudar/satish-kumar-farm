@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Camera, X, ZoomIn } from 'lucide-react';
 import { GALLERY_ITEMS } from '../data/farmData';
 
-const CATEGORIES = ['All', 'Fruits', 'Vegetables', 'Timber & Trees', 'Farm Landscape', 'Farm Life'];
+const CATEGORIES = ['All', 'Fruits', 'Vegetables'];
 
 export default function GallerySection({ isPreview = false }) {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -12,7 +12,7 @@ export default function GallerySection({ isPreview = false }) {
     ? GALLERY_ITEMS
     : GALLERY_ITEMS.filter((item) => item.category === activeCategory);
 
-  const displayItems = isPreview ? filteredItems.slice(0, 6) : filteredItems;
+  const displayItems = isPreview ? filteredItems.slice(0, 4) : filteredItems;
 
   return (
     <section className="py-16 md:py-24 bg-[#F6F1E7]">
@@ -29,7 +29,7 @@ export default function GallerySection({ isPreview = false }) {
           </h2>
 
           <p className="text-base sm:text-lg text-[#76543A] leading-relaxed">
-            Moments from our orchards, soil cultivation, fruit canopies, and ongoing timber growth across five years of farming.
+            Original photographs from our family farm orchards and vegetable beds, showcasing our authentic harvests.
           </p>
         </div>
 
@@ -53,8 +53,8 @@ export default function GallerySection({ isPreview = false }) {
           </div>
         )}
 
-        {/* Responsive CSS Grid (Masonry feel) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Responsive CSS Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {displayItems.map((item) => (
             <div
               key={item.id}

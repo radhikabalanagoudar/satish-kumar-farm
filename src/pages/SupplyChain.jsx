@@ -46,7 +46,7 @@ export default function SupplyChainPage() {
                 Freshness Timing
               </h4>
               <p className="text-xs text-[#1E2824]/80 leading-relaxed">
-                Produce is picked at peak physiological ripeness and crated for rapid dispatch, minimizing post-harvest shelf loss.
+                Produce is picked at peak physiological ripeness and crated for direct farm-gate collection, preserving natural field freshness.
               </p>
             </div>
 
@@ -56,7 +56,7 @@ export default function SupplyChainPage() {
                 Gentle Handling
               </h4>
               <p className="text-xs text-[#1E2824]/80 leading-relaxed">
-                Individual manual inspection avoids fruit bruising, skin tears, or rapid decay during transport movement.
+                Individual manual inspection avoids fruit bruising, skin tears, or damage during on-farm grading and collection.
               </p>
             </div>
 

@@ -67,6 +67,16 @@ export default function Crops() {
               Vegetables ({vegetables.length})
             </button>
           </div>
+
+          {/* Quick CTA to Prices */}
+          <div className="mt-6">
+            <a
+              href="/prices"
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#8F2D3B] hover:bg-[#AA394A] text-white text-xs uppercase tracking-wider font-semibold transition-colors shadow-sm"
+            >
+              <span>View Verified Farm Produce & Prices →</span>
+            </a>
+          </div>
         </div>
       </div>
 
